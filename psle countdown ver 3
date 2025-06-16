@@ -4,63 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PSLE 2025 Countdown</title>
+    <!-- Tailwind CSS CDN for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Custom styles to enhance the design */
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(to right bottom, #a7f3d0, #6ee7b7, #34d399); /* Green gradient */
+            background: linear-gradient(to right bottom, #a7f3d0, #6ee7b7, #34d399); /* Green gradient background */
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
+            min-height: 100vh; /* Full viewport height */
             margin: 0;
-            padding: 20px; /* Add some padding for mobile */
-            box-sizing: border-box;
+            padding: 20px; /* Padding for mobile responsiveness */
+            box-sizing: border-box; /* Include padding in element's total width and height */
         }
         .container {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 1.5rem; /* More rounded corners */
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            padding: 2.5rem; /* Increased padding */
-            max-width: 900px; /* Max width for larger screens */
-            width: 100%;
-            text-align: center;
-            backdrop-filter: blur(8px); /* Subtle blur effect */
-            -webkit-backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white background */
+            border-radius: 1.5rem; /* Rounded corners for the main container */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* Soft shadow */
+            padding: 2.5rem; /* Ample padding inside the container */
+            max-width: 900px; /* Maximum width for the container on larger screens */
+            width: 100%; /* Full width on smaller screens */
+            text-align: center; /* Center align all text content */
+            backdrop-filter: blur(8px); /* Subtle blur effect for background elements */
+            -webkit-backdrop-filter: blur(8px); /* For Safari compatibility */
         }
         .countdown-item {
-            background-color: #ecfdf5; /* Light green for items */
-            border-radius: 1rem;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem; /* Increased margin */
-            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+            background-color: #ecfdf5; /* Light green background for individual countdown boxes */
+            border-radius: 1rem; /* Rounded corners for countdown items */
+            padding: 1.5rem; /* Padding inside countdown items */
+            margin-bottom: 1.5rem; /* Space between countdown items */
+            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); /* Inner shadow for depth */
             border: 1px solid #d1fae5; /* Subtle border */
         }
         .countdown-value {
-            font-size: 2.25rem; /* Larger font for values */
-            font-weight: 700;
-            color: #047857; /* Darker green for values */
-            line-height: 1; /* Adjust line height */
+            font-size: 2.25rem; /* Large font size for the countdown numbers */
+            font-weight: 700; /* Bold font weight */
+            color: #047857; /* Darker green color for the numbers */
+            line-height: 1; /* Tight line height for numbers */
         }
         .countdown-label {
-            font-size: 0.9rem;
-            color: #10b981; /* Medium green for labels */
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 0.5rem;
+            font-size: 0.9rem; /* Smaller font size for labels (Days, Hours, etc.) */
+            color: #10b981; /* Medium green color for labels */
+            text-transform: uppercase; /* Uppercase text */
+            letter-spacing: 0.05em; /* Slightly increased letter spacing */
+            margin-top: 0.5rem; /* Space between value and label */
         }
         .exam-title {
-            font-size: 1.6rem; /* Slightly larger for exam titles */
-            font-weight: 700;
+            font-size: 1.6rem; /* Size for exam titles (e.g., PSLE Oral Examination) */
+            font-weight: 700; /* Bold font weight */
             color: #065f46; /* Even darker green */
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.75rem; /* Space below title */
         }
         .exam-date {
-            font-size: 1.1rem;
-            color: #065f46;
-            margin-bottom: 1.25rem; /* Increased margin */
-            font-weight: 500;
+            font-size: 1.1rem; /* Size for exam dates */
+            color: #065f46; /* Dark green color */
+            margin-bottom: 1.25rem; /* Space below date */
+            font-weight: 500; /* Medium font weight */
         }
     </style>
 </head>
@@ -72,23 +75,27 @@
             </span>
         </h1>
 
-        <!-- PSLE Oral Exam Countdown -->
+        <!-- PSLE Oral Exam Countdown Section -->
         <div class="countdown-item">
             <h2 class="exam-title">PSLE Oral Examination</h2>
             <p class="exam-date">Wednesday, 13 August 2025</p>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <!-- Days display -->
                 <div class="p-3 bg-white rounded-md shadow-sm">
                     <div id="oral-days" class="countdown-value">00</div>
                     <div class="countdown-label">Days</div>
                 </div>
+                <!-- Hours display -->
                 <div class="p-3 bg-white rounded-md shadow-sm">
                     <div id="oral-hours" class="countdown-value">00</div>
                     <div class="countdown-label">Hours</div>
                 </div>
+                <!-- Minutes display -->
                 <div class="p-3 bg-white rounded-md shadow-sm">
                     <div id="oral-minutes" class="countdown-value">00</div>
                     <div class="countdown-label">Minutes</div>
                 </div>
+                <!-- Seconds display -->
                 <div class="p-3 bg-white rounded-md shadow-sm">
                     <div id="oral-seconds" class="countdown-value">00</div>
                     <div class="countdown-label">Seconds</div>
@@ -97,23 +104,27 @@
             <p id="oral-message" class="text-lg font-semibold text-red-600 mt-4"></p>
         </div>
 
-        <!-- PSLE Listening Comprehension Exam Countdown -->
+        <!-- PSLE Listening Comprehension Exam Countdown Section -->
         <div class="countdown-item">
             <h2 class="exam-title">PSLE Listening Comprehension Exam</h2>
             <p class="exam-date">Tuesday, 16 September 2025</p>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <!-- Days display -->
                 <div class="p-3 bg-white rounded-md shadow-sm">
                     <div id="lc-days" class="countdown-value">00</div>
                     <div class="countdown-label">Days</div>
                 </div>
+                <!-- Hours display -->
                 <div class="p-3 bg-white rounded-md shadow-sm">
                     <div id="lc-hours" class="countdown-value">00</div>
                     <div class="countdown-label">Hours</div>
                 </div>
+                <!-- Minutes display -->
                 <div class="p-3 bg-white rounded-md shadow-sm">
                     <div id="lc-minutes" class="countdown-value">00</div>
                     <div class="countdown-label">Minutes</div>
                 </div>
+                <!-- Seconds display -->
                 <div class="p-3 bg-white rounded-md shadow-sm">
                     <div id="lc-seconds" class="countdown-value">00</div>
                     <div class="countdown-label">Seconds</div>
@@ -122,23 +133,27 @@
             <p id="lc-message" class="text-lg font-semibold text-red-600 mt-4"></p>
         </div>
 
-        <!-- PSLE Written Exam Countdown -->
+        <!-- PSLE Written Exam Countdown Section -->
         <div class="countdown-item">
             <h2 class="exam-title">PSLE Written Examination</h2>
             <p class="exam-date">Thursday, 25 September 2025 – Wednesday, 1 October 2025</p>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <!-- Days display -->
                 <div class="p-3 bg-white rounded-md shadow-sm">
                     <div id="written-days" class="countdown-value">00</div>
                     <div class="countdown-label">Days</div>
                 </div>
+                <!-- Hours display -->
                 <div class="p-3 bg-white rounded-md shadow-sm">
                     <div id="written-hours" class="countdown-value">00</div>
                     <div class="countdown-label">Hours</div>
                 </div>
+                <!-- Minutes display -->
                 <div class="p-3 bg-white rounded-md shadow-sm">
                     <div id="written-minutes" class="countdown-value">00</div>
                     <div class="countdown-label">Minutes</div>
                 </div>
+                <!-- Seconds display -->
                 <div class="p-3 bg-white rounded-md shadow-sm">
                     <div id="written-seconds" class="countdown-value">00</div>
                     <div class="countdown-label">Seconds</div>
@@ -154,45 +169,51 @@
 
     <script>
         // Function to update the countdown for a specific exam
+        // targetDate: The target timestamp in milliseconds
+        // daysId, hoursId, minutesId, secondsId: IDs of the HTML elements to update
+        // messageId: ID of the HTML element to display messages (e.g., "Exam has passed")
         function updateCountdown(targetDate, daysId, hoursId, minutesId, secondsId, messageId) {
-            const now = new Date().getTime();
-            const distance = targetDate - now;
+            const now = new Date().getTime(); // Get current timestamp
+            const distance = targetDate - now; // Calculate the remaining time
 
+            // Calculate days, hours, minutes, and seconds
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Display the results
+            // Display the results, ensuring two digits (e.g., 05 instead of 5)
+            // If distance is negative (exam passed), display '00'
             document.getElementById(daysId).innerText = days < 0 ? '00' : String(days).padStart(2, '0');
             document.getElementById(hoursId).innerText = hours < 0 ? '00' : String(hours).padStart(2, '0');
             document.getElementById(minutesId).innerText = minutes < 0 ? '00' : String(minutes).padStart(2, '0');
             document.getElementById(secondsId).innerText = seconds < 0 ? '00' : String(seconds).padStart(2, '0');
 
-            // If the countdown is finished, write some text
+            // If the countdown is finished, display a message
             if (distance < 0) {
                 document.getElementById(messageId).innerText = "The exam has started or passed!";
             }
         }
 
-        // Define target dates for each exam (Year, Month (0-indexed), Day, Hour, Minute, Second)
+        // Define target dates for each exam
+        // Using T08:00:00, T09:00:00, T08:15:00 for approximate start times for calculations
         // PSLE Oral Exam: Wednesday, 13 August 2025
-        const oralExamDate = new Date('2025-08-13T08:00:00').getTime(); // Assuming 8 AM start
+        const oralExamDate = new Date('2025-08-13T08:00:00').getTime();
 
         // PSLE Listening Comprehension Exam: Tuesday, 16 September 2025
-        const lcExamDate = new Date('2025-09-16T09:00:00').getTime(); // Assuming 9 AM start
+        const lcExamDate = new Date('2025-09-16T09:00:00').getTime();
 
         // PSLE Written Examination: Thursday, 25 September 2025
-        const writtenExamDate = new Date('2025-09-25T08:15:00').getTime(); // Assuming 8:15 AM start of first paper
+        const writtenExamDate = new Date('2025-09-25T08:15:00').getTime();
 
-        // Update the countdowns every 1 second
+        // Update the countdowns every 1 second using setInterval
         setInterval(() => {
             updateCountdown(oralExamDate, 'oral-days', 'oral-hours', 'oral-minutes', 'oral-seconds', 'oral-message');
             updateCountdown(lcExamDate, 'lc-days', 'lc-hours', 'lc-minutes', 'lc-seconds', 'lc-message');
             updateCountdown(writtenExamDate, 'written-days', 'written-hours', 'written-minutes', 'written-seconds', 'written-message');
         }, 1000);
 
-        // Initial call to display immediately
+        // Initial call to display countdown immediately upon page load
         updateCountdown(oralExamDate, 'oral-days', 'oral-hours', 'oral-minutes', 'oral-seconds', 'oral-message');
         updateCountdown(lcExamDate, 'lc-days', 'lc-hours', 'lc-minutes', 'lc-seconds', 'lc-message');
         updateCountdown(writtenExamDate, 'written-days', 'written-hours', 'written-minutes', 'written-seconds', 'written-message');
